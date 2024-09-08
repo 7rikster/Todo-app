@@ -1,0 +1,30 @@
+.today{
+    margin-left: 17rem; 
+}
+
+.today h1{
+    font-size: 3.6rem;
+    margin: 0;
+    text-align: justify;
+    margin-top: 1.4rem;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+    /* font-family:Georgia, Times, 'Times New Roman'; */
+}
+.task-container{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    padding-left: 3rem;
+}
+.completed{
+    margin-left: 3rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+.pending{
+    width: 34rem;
+    /* font-family: poppins; */
+    font-size: 1.4rem;
+    font-weight: 300;
+}

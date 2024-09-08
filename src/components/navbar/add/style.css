@@ -1,0 +1,22 @@
+.add-button{
+    margin-top: 4rem;
+    width: 100%;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button button{
+    /* width: 95.5%; */
+    padding: 6px 30px;
+    font-size: 1.2rem;
+    border-radius: 18px;
+    background-color: rgb(67, 127, 222);
+    color: white;
+    transition: 0.4s ease;
+}
+
+.add-button button:hover{
+    background-color: rgb(20, 96, 218);
+}

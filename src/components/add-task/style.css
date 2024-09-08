@@ -1,0 +1,118 @@
+.add-task-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 12rem;
+  }
+  
+  .select {
+    color: #4ea2f7f3;
+    font-size: 24px;
+    margin-top: 1rem;
+  }
+  
+  .custom-datepicker-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4ea2f7f3;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .custom-datepicker-input:hover,
+  .custom-datepicker-input:focus {
+    border-color: #4ea2f7f3;
+  }
+  
+  .custom-datepicker-popper {
+    border-radius: 8px;
+    overflow: hidden;
+    /* margin-bottom: 10rem; */
+    /* background-color: black; */
+  }
+  
+  .react-datepicker {
+    background-color: #ffffff;
+    border: 2px solid #4ea2f7f3;
+    border-radius: 8px;
+  }
+  
+  .react-datepicker__header {
+    background-color: #4ea2f7f3;
+    color: #fff;
+  }
+  
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #252525;
+  }
+  
+  .react-datepicker__day--selected {
+    background-color: #4ea2f7f3;
+    color: #fff;
+  }
+  
+  .selected-date-display {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #83a7f5;
+  }
+
+  .add-task-container button{
+    position: absolute;
+    bottom: 6px;
+    /* left: 50%; */
+    /* bottom: 5px; */
+    /* width: 5rem; */
+    background-color: #4ea2f7f3;
+    padding: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    color: white;
+  }
+
+  .input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-input{
+    width: 68%;
+    height: 2rem;
+    border-radius: 20px;
+    border: 2px solid #4ea2f7f3;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .task-input:hover,
+  .task-input:focus{
+    border-color: #4ea2f7f3;
+  }
+  
+
+.add-task-container i{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.add-task-container i:hover{
+  color: #4ea2f7f3;
+}

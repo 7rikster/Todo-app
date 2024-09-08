@@ -1,0 +1,19 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.3rem;
+    padding-left: 0.8rem;
+
+}
+
+.profile-container i{
+    font-size: 3.5rem;
+    align-items: center;
+    height: 3.5rem;
+}
+
+.profile-container h3{
+    font-size: 2rem;
+    margin: 0.6rem 0;
+    margin-left: 0.8rem;
+}
