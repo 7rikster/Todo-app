@@ -14,17 +14,21 @@
 .task-container{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
+    justify-content: center;
+    gap: 3rem;
     padding-left: 3rem;
+    padding-right: 3rem;
 }
 .completed{
-    margin-left: 3rem;
+    width: 50%;
+    
     font-size: 1.4rem;
     font-weight: 300;
 }
 .pending{
-    width: 34rem;
+    width: 50%;
     /* font-family: poppins; */
     font-size: 1.4rem;
     font-weight: 300;
+    align-items: start;
 }
