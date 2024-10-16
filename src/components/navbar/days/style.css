@@ -32,3 +32,6 @@ button{
 .nav-item:hover{
     background-color: rgba(131, 131, 131, 0.126);
 }
+.nav-item.active{
+    background-color: rgba(131, 131, 131, 0.126);
+}
