@@ -35,7 +35,7 @@ function RegisterPage() {
                 console.log(auth.currentUser.displayName)
                 if(auth.currentUser.displayName){
                     setLoading(false);
-                    navigate('/profile');
+                    navigate('/');
                 } 
             })
         })
