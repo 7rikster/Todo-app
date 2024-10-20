@@ -2,11 +2,12 @@ import { addNewTodo, fetchListOfTodos } from "../../todos";
 import "./style.css";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 import TodoCard from "../todo-card";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import CalendarNextMonth from "./calendar-next-month";
+import { AuthContext } from "../../context";
 
 function NextMonth() {
-
+    const {user} = useContext(AuthContext);
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -55,7 +56,7 @@ function NextMonth() {
 
     return ( 
         <div className="today" >
-            <h1>Hello Priyanshu</h1>
+            <h1>Hello {user.displayName}</h1>
             {
                 isLoading && <h2>Fetching your tasks for This Month</h2>
             }

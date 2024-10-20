@@ -2,12 +2,13 @@
 import "./style.css";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { fetchListOfTodos } from "../../../../todos";
 import TodoCard from "../../../todo-card";
+import { AuthContext } from "../../../../context";
 
 function Incompleted() {
-
+    const {user} = useContext(AuthContext);
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -45,7 +46,7 @@ function Incompleted() {
 
     return ( 
         <div className="pending-container" >
-            <h1>Hello Priyanshu</h1>
+            <h1>Hello {user.displayName}</h1>
             {
                 isLoading && <h2>Fetching all of your pending tasks</h2>
             }

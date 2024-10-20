@@ -3,10 +3,11 @@ import "./style.css";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 import TodoCard from "../todo-card";
 import CalendarToday from "./calender-with-today";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context";
 
 function Today() {
-
+    const {user} = useContext(AuthContext);
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -47,7 +48,7 @@ function Today() {
 
     return ( 
         <div className="today" >
-            <h1>Hello Priyanshu</h1>
+            <h1>Hello {user.displayName}</h1>
             {
                 isLoading && <h2>Fetching your tasks for today</h2>
             }

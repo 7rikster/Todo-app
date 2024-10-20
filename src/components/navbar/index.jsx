@@ -3,6 +3,7 @@ import Profile from "./profile";
 import "./navbar-style.css";
 import AddButton from "./add";
 import StateOfTasks from "./state-of-task";
+import LogoutButton from "./logoutButton";
 
 function Navbar() {
     return ( 
@@ -11,6 +12,7 @@ function Navbar() {
             <DaysCard/>
             <AddButton/>
             <StateOfTasks/>
+            <LogoutButton/>
         </div>
      );
 }
