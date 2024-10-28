@@ -25,11 +25,11 @@ function Incompleted() {
 
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
-    const {data: incompletedList, isLoading: isLoadingIncompleted} = useQuery({
+    const {data: incompletedList=[], isLoading: isLoadingIncompleted} = useQuery({
         queryKey : ['incompletedList'],
         queryFn : ()=> todoList.filter(todo => todo.state == "pending" && todo.day < day && todo.month <= month && todo.year <= year)
     });

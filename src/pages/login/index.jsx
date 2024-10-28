@@ -20,7 +20,8 @@ function LoginPage() {
         loginWithFirebase().then(result=> {
             
             if(result.user){
-                navigate('/profile');
+                window.location.reload();
+                navigate('/');
                 setLogin(false);
             }
         })

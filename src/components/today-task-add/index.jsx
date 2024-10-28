@@ -26,7 +26,7 @@ function TodayTaskAdd() {
     const navigate = useNavigate();
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
@@ -37,8 +37,8 @@ function TodayTaskAdd() {
 
     async function handleTaskAdd(){
         await handleAddNewTodoMutation({task, day, month, year});
-        console.log(day, month, year);
         setTask("");
+        window.location.reload();
         navigate("/");
     }
  
@@ -46,6 +46,8 @@ function TodayTaskAdd() {
         mutationFn: addNewTodo,
         onSuccess: ()=>{
             getQueryClient.invalidateQueries(["todoList"]);
+            window.location.reload();
+
         }
     })
 
@@ -53,7 +55,9 @@ function TodayTaskAdd() {
 
     return ( 
         <div className="today-add-container">
-            <i onClick={()=>{navigate("/")}}><IoMdClose /></i>
+            <i onClick={()=>{
+                navigate("/")
+            }}><IoMdClose /></i>
             <h2>Add Task for Today</h2>
             <input name="name" value={task} placeholder="Enter your task" onChange = {handleTaskInput}/>
             <button disabled={task.trim() === ""} onClick={handleTaskAdd} >Add</button>

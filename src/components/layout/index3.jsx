@@ -21,9 +21,10 @@ function Layout3() {
         <Routes>
         <Route path='/' element = {<Layout/>}>
           <Route path="tomorrow" element = {<Tomorrow/>}/>
-          <Route path="/" element = {<Layout2/>}>
-            <Route path="add-today" element = {<TodayTaskAdd/>}/>
-          </Route>
+          <Route path="/" element = {<Layout2/>}/>
+          
+          <Route path="add-today" element = {<TodayTaskAdd/>}/>
+
           <Route path="this-month" element = {<ThisMonth/>}/>
           <Route path="next-month" element = {<NextMonth/>}/>
           <Route path="/pending" element = {<Pending/>}/>

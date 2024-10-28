@@ -14,7 +14,7 @@ function AddTask() {
 
   const getQueryClient = useQueryClient();
 
-    const {data: todoList} = useQuery({
+    const {data: todoList=[]} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
@@ -27,12 +27,15 @@ function AddTask() {
         await handleAddNewTodoMutation(task);
         setTask("");
         navigate("/");
+        window.location.reload();
     }
 
     const {mutateAsync: handleAddNewTodoMutation} = useMutation({
         mutationFn: addNewTodo,
         onSuccess: ()=>{
             getQueryClient.invalidateQueries(["todoList"]);
+            window.location.reload();
+
         }
     })
 

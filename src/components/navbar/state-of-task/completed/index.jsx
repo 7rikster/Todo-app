@@ -25,11 +25,11 @@ function Completed() {
 
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
-    const {data: completedList, isLoading: isLoadingCompleted} = useQuery({
+    const {data: completedList=[], isLoading: isLoadingCompleted} = useQuery({
         queryKey : ['completedList'],
         queryFn : ()=> todoList.filter(todo => todo.state == "completed" && (todo.month == month || todo.month == month-1))
     });

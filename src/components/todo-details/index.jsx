@@ -8,6 +8,7 @@ function TodoDetails({details, openDialog, setOpenDialog, setTodoDetails}) {
             <Dialog open={openDialog} onClose={()=>setOpenDialog(false)}>
                 <DialogTitle>{details?.todo}</DialogTitle>
                 <DialogContent>
+                
                     <DialogContentText>
                         State: {details?.state}
                     </DialogContentText>

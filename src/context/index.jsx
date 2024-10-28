@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail} from 'firebase/auth';
-import auth from "../firebaseConfig.js";
+import {auth} from "../firebaseConfig.js";
 import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
@@ -45,6 +45,7 @@ export default function AuthState({children}){
 
     useEffect(()=>{
         if(user) navigate("/");
+        
     }, [user])
 
     if(loading) return <h1>Loading! Please Wait</h1>

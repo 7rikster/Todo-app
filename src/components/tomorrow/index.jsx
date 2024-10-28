@@ -42,17 +42,25 @@ function Tomorrow() {
 
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
-        queryFn : ()=> fetchListOfTodos()
+        queryFn : ()=> fetchListOfTodos(),
+        refetchOnMount: true,
+        refetchOnWindowFocus: true,
     });
-    const {data: pendingList, isLoading: isLoadingPending} = useQuery({
+    const {data: pendingList=[], isLoading: isLoadingPending} = useQuery({
         queryKey : ['pendingList'],
-        queryFn : ()=> todoList.filter(todo => todo.state == "pending" && todo.day == day && todo.month == month && todo.year == year)
+        queryFn : ()=> todoList.filter(todo => todo.state == "pending" && todo.day == day && todo.month == month && todo.year == year),
+        refetchOnMount: true,
+        refetchOnWindowFocus: true,
+        enabled: !!todoList.length,
     });
-    const {data: completedList, isLoading: isLoadingCompleted} = useQuery({
+    const {data: completedList=[], isLoading: isLoadingCompleted} = useQuery({
         queryKey : ['completed'],
-        queryFn : ()=> todoList.filter(todo => todo.state == "completed" && todo.day == day && todo.month == month && todo.year == year)
+        queryFn : ()=> todoList.filter(todo => todo.state == "completed" && todo.day == day && todo.month == month && todo.year == year),
+        refetchOnMount: true,
+        refetchOnWindowFocus: true,
+        enabled: !!todoList.length,
     });
     
     function handleCheckbox(){

@@ -25,11 +25,11 @@ function Pending() {
 
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
-    const {data: pendingList, isLoading: isLoadingPending} = useQuery({
+    const {data: pendingList=[], isLoading: isLoadingPending} = useQuery({
         queryKey : ['pendingList'],
         queryFn : ()=> todoList.filter(todo => todo.state == "pending" && todo.day >= day && todo.month >= month && todo.year >= year)
     });

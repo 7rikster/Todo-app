@@ -3,7 +3,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
-import { changeState, fetchListOfTodos, getDetails } from "../../todos";
+import { changeState, fetchListOfTodos } from "../../todos";
 import "./style.css"
 import TodoDetails from '../todo-details';
 
@@ -15,7 +15,7 @@ function TodoCard({task, id, onCheckChange, checked}) {
 
     const getQueryClient = useQueryClient();
 
-    const {data: todoList, isLoading} = useQuery({
+    const {data: todoList=[], isLoading} = useQuery({
         queryKey : ['todoList'],
         queryFn : ()=> fetchListOfTodos()
     });
@@ -32,13 +32,16 @@ function TodoCard({task, id, onCheckChange, checked}) {
         }
     })
 
-    let details = null;
-    function handleGetDetails(){
-        details = todoList[id-1];
-        console.log(details);
-        setTodoDetails(details);
-        setOpenDialog(true);
-    }
+    function handleGetDetails() {
+        const todo = todoList.find((item) => item.id === id); 
+    
+        if (todo) {
+          setTodoDetails(todo); 
+          setOpenDialog(true); 
+        } else {
+          console.error("Todo not found");
+        }
+      }
 
     
 

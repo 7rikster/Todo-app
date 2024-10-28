@@ -6,7 +6,7 @@ import "./registerStyle.css";
 import {useNavigate} from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import { updateProfile } from "firebase/auth";
-import auth from "../../firebaseConfig";
+import {auth} from "../../firebaseConfig";
 
 function RegisterPage() {
     const [error, setError] = useState('');
@@ -32,9 +32,9 @@ function RegisterPage() {
             updateProfile(result.user, {
                 displayName: name
             }).then(()=>{
-                console.log(auth.currentUser.displayName)
                 if(auth.currentUser.displayName){
                     setLoading(false);
+                    window.location.reload();
                     navigate('/');
                 } 
             })
