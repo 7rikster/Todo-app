@@ -21,8 +21,8 @@ function LoginPage() {
             
             if(result.user){
                 navigate('/');
-                setLogin(false);
                 window.location.reload();
+                setLogin(false);
             }
         })
         .catch((e) => {
