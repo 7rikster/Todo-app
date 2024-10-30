@@ -34,7 +34,7 @@ function AddTask() {
         mutationFn: addNewTodo,
         onSuccess: ()=>{
             getQueryClient.invalidateQueries(["todoList"]);
-            window.location.reload();
+            // window.location.reload();
 
         }
     })

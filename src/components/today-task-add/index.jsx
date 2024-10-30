@@ -38,15 +38,16 @@ function TodayTaskAdd() {
     async function handleTaskAdd(){
         await handleAddNewTodoMutation({task, day, month, year});
         setTask("");
-        window.location.reload();
         navigate("/");
+        window.location.reload();
+        
     }
  
     const {mutateAsync: handleAddNewTodoMutation} = useMutation({
         mutationFn: addNewTodo,
         onSuccess: ()=>{
             getQueryClient.invalidateQueries(["todoList"]);
-            window.location.reload();
+            // window.location.reload();
 
         }
     })
